@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Eagle+Lake&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Covered By Your Grace', cursive;
+    line-height: 1.5;
+    font-size:1rem;
+    margin: 2em auto;
+    width: 70%;
+    /*Background Image Source: https://www.pexels.com/photo/abstract-ancient-antique-art-235985/ 
+    Empty Brown Canvas, Pixabay, Free Use*/
+    background-image: url(images/parchment_h.jpeg);
+    background-size: cover;
+}
+
+header{
+    background-image: radial-gradient(#fff, transparent, transparent);
+}
+
+h3{ 
+    font-family: 'Eagle Lake', cursive;
+}
+h2{ 
+    font-family: 'Eagle Lake', cursive;
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px white;
+    margin-bottom: .5em;
+}
+h1{ 
+    font-family: 'Eagle Lake', cursive;
+}
+
+.gallery {
+    margin: 0;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 1em;
+    justify-content: center;
+}
+
+.thumbnail img {
+    max-width: 100%;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /*    border-radius: 15px;*/
+    box-shadow: 0px 0px 8px #00000075;
+    mix-blend-mode: luminosity;
+    opacity: .75;
+}
+
+.thumbnail:hover img,
+.thumbnail img:focus {
+    cursor: zoom-in;
+    mix-blend-mode: normal;
+    box-shadow: 0px 0px 25px #0dd;
+    opacity: 1;
+    animation-name: fade-in;
+    animation-duration: .5s;
+}
+
+.thumbnail:hover {
+    background-color: #7dd;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 200px;
+    background-color: #ae825b;
+}
+
+.thumbnail p {
+    position: relative;
+    font-size:1.33em;
+    top: -4em;
+    left: 0;
+    color: #fff;
+    padding: 0 1em;
+    text-align: center;
+    text-shadow: 2px 2px 3px black;
+    background-image: linear-gradient(transparent, #201005bb, transparent);
+}
+
+.overlay {
+    cursor: zoom-out;
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    overflow: auto;
+    background-color: rgba(58, 31, 20, .70);
+    animation-name: fade-in;
+    animation-duration: .5s;
+}
+
+.photo {
+    display: grid;
+    margin: 3em auto;
+    height: 90%;
+    width: 90%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 12fr;
+}
+
+.photo h2 {
+    text-align: center;
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 2px 2px 4px #201005;
+}
+
+.photo img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    box-shadow: 0px 0px 1em #fff;
+    animation-name: wink;
+    animation-duration: .3s;
+}
+
+footer{
+    background-image: radial-gradient(#fff, transparent, transparent);
+    text-align: center;
+    margin: 1em;
+}
+
+footer p{
+    font-size:1.5em;
+    text-shadow: 2px 1px 3px #fffa;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes wink {
+    0% { transform: scale(0); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/*Tablet View*/
+@media (max-width: 1224px){
+    body{
+        font-size: 0.85rem;
+    }
+    body{
+        background-image:url(images/parchment_v.jpeg);
+    }
+    .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+}
+
+/*Small Tablet View*/
+@media (max-width: 922px){
+    .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+
+}
+}
+
+/*Mobile View*/
+@media (max-width: 768px){
+    body{
+        font-size: 0.777rem;
+    }
+    
+    .gallery {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+
+}
+}
